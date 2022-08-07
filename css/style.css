@@ -1,0 +1,499 @@
+/*seguindo o Mobile First Design approach */
+/* resetando... */
+
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+ img {
+    width:100%;
+    height:auto;
+} 
+a {
+  text-decoration: none;
+}
+ul{
+  list-style:none;
+}
+/* variáveis no elemento "pai"*/
+:root {
+  --header-height: 4.5rem;
+    /*cores */
+    --body-color-f8fcfe: #F8FCFE;
+--text-color-283137: #283137;
+--two-color-033244: #033244;
+--unnamed-color-005271: #005271;
+--unnamed-color-0089bc: #0089BC;
+--unnamed-color-00aeef: #00AEEF;
+--unnamed-color-71d8ff: #71D8FF;
+--unnamed-color-b2eaff: #B2EAFF;
+--unnamed-color-e2f7ff: #E2F7FF;
+--title-color-e2f7ff: #000000;
+}
+/*base */
+html{
+  scroll-behavior: smooth;
+}
+body {
+    font: 500 1rem "roboto slab", sans-serif;
+    color: var(--text-color-283137);
+    background:white; 
+    --webkit-font-smoothing: antialiased;
+}
+h1 {
+    font: 900 1.31rem "roboto slab", sans-serif;
+    color: var(--title-color-e2f7ff);
+    --webkit-font-smoothing: auto;
+}
+
+ .button:hover {
+   background: rgb(30, 72, 149);
+   color:white;
+      }
+
+ 
+  
+
+/* layout */ 
+/* usei a unidade de medida relativa (rem) pra buscar o root */
+
+.container {
+  width:100%;
+  margin-left: 2.3rem;
+  margin-right: 2.3rem;
+}
+.grid {
+  display:grid;
+  gap: 2rem;
+}
+.section {
+  padding:calc(5rem + var(--header-height)) 0;
+}
+
+
+
+
+  /* navigation */
+
+#header nav {
+    display:flex;
+    justify-content: space-around;
+    height: 2.87rem;
+    align-items: center;
+    width:100%;
+    margin-left:1rem;
+}
+nav ul li {
+  text-align: left;
+ 
+}
+
+nav ul li a {
+  transition: color 0.2s;
+  position: relative;
+  color: var(--body-color-f8fcfe)
+}
+
+#header.scroll {
+  box-shadow: 0px 0px 12px  rgba(0,0,0,0.15);
+}
+
+#header.scroll span {
+  color: var(--base-color-second);
+  transition: 0.9s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+    color:var(--base-color);
+    
+}
+
+nav ul li a::after
+ {
+    
+    width: 0%;
+    height: 2px;
+    background: var(--text-color-283137);
+
+   position: absolute;
+   left: 0;
+   bottom: -1.5rem;
+
+   transition: width 0.2s;
+}
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width:100%;
+}
+
+nav .menu{
+  opacity: 0;
+  visibility: hidden;
+  top: -20rem;
+  transition: 0.2s
+}
+
+nav .menu ul {
+  display: none;
+}
+/*---mostrar menu-- */
+nav.show .menu{ 
+  opacity: 1;
+  visibility: visible;
+
+  background-color: var(--text-color-283137);
+
+  height:100%;
+  width:100%;
+  position: fixed;
+  
+  top: 0;
+  left: 0;
+  
+  display:grid;
+  place-content: center;
+
+
+}
+
+nav.show  ul.grid {
+  gap:4rem;
+}
+
+nav.show .menu ul{
+  display:grid;  
+  
+}
+/* toggle menu */
+.toggle {
+  color: var(--base-color);
+  font-size: 1.5rem;
+  cursor: pointer;    
+}
+
+nav .icon-close {
+  visibility: hidden;
+  opacity:0;
+
+  position: absolute;
+  top: -1.5rem;
+  right: 1.5rem;
+  color: var(--body-color-f8fcfe);
+  transition: 0.2s ;
+}
+
+nav.show div.icon-close {
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
+}
+
+.logo {
+    top: 0.81rem;
+    left: 2.31rem;
+    width: 6.5rem;
+    height: 1.25rem;
+    background: transparent ul('../assets mobile/nav/logo.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.pessoa {
+top: 0.68rem;
+left: 13.6rem;
+width: 1.5rem;
+height: 1.5rem;
+background: transparent url("../assets mobile/nav/account_circle_black_24dp.svg") 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+.carrinho {
+top: 0.68rem;
+left:16.1rem;
+width: 1.5rem;
+height: 1.5rem;
+background: transparent url('../assets mobile/nav/shopping_cart_black_24dp.svg') 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+.grid{
+    display: grid;
+    gap:1.5rem;
+}
+.section {
+ padding: 3.4rem 0;
+ text-align: center;
+
+}
+
+.image img {
+   
+    margin-bottom: 1.5rem;
+   
+  }
+
+  
+/*-----------------------------------------------------------------------------------*/
+  /*servicos*/
+ 
+
+  
+/*swiper */
+ 
+.swiper-slide {
+  height: auto;
+  padding: 4rem 1rem;
+}
+
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.swiper-pagination-bullet-active{
+  background: var(--body-color-f8fcfe);
+}
+   #servicos {
+    background:whitesmoke ;
+   }
+  #servicos .container {
+    margin-left:0;
+    margin-right:0;
+    position: relative;
+    overflow: hidden;
+  }
+  #servicos .text {
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+   margin-bottom: 4.5rem;
+   margin-top: 1.5rem;
+    text-align: center;
+    font: normal normal 900 17px "Roboto Slab"; 
+    
+
+  }
+  #servicos span{
+    color: var(--unnamed-color-00aeef);
+  }
+  #servicos .button{ 
+    width: 168px;
+    height: 32px;
+    background: var(--unnamed-color-71d8ff) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    font: normal normal 900 12px/16px "Roboto Slab"; ;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    margin-left: auto;
+      margin-right: auto;
+    
+    margin-top:2rem;
+    color: var(--unnamed-color-033244);
+    transition: background 0.3 ;
+    }
+    
+
+  /*imagens do carrosel */
+   .slid  {
+    width: 100px;
+   height: 100px;
+   
+   
+  }
+  /* produtos */
+
+  #produtos .container{
+    margin:0;
+  }
+  
+/*swiper */
+  .swiper {
+    width: 300px;
+    height: 300px;
+    margin:auto;
+   
+  }
+  .swiper-slide {
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0px 0px 12px rgb(0 0 0 / 15%);
+    border-radius: 0.25rem;
+    background:white;
+  }
+  
+  #produtos .container {
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+
+  }
+  #produtos .text {
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+   margin-bottom: 4.5rem;
+   margin-top: 1.5rem;
+    text-align: center;
+    font: normal normal 900 17px "Roboto Slab";
+    
+
+  }
+  #produtos span{
+    color: var(--unnamed-color-00aeef);
+  }
+
+  /*imagens do carrosel */
+   .slid  {
+    width: 100px;
+   height: 100px;
+   object-fit: cover;
+   
+   
+  }
+ 
+ 
+  #produtos .button{ 
+    width: 220px;
+    height: 32px;
+    background: var(--unnamed-color-71d8ff) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    font: normal normal 900 12px/16px "Roboto Slab";
+    border-radius: 0.25rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    margin-left: auto;
+      margin-right: auto;
+    
+    margin-top:2rem;
+    color: var(--unnamed-color-033244);
+    transition: background 0.3 ;
+    }
+    
+/* junte-se a nós */
+
+
+#join .button{ 
+  width: 165px;
+  height: 32px;
+  background: var(--unnamed-color-71d8ff) 0% 0% no-repeat padding-box;
+  opacity: 1;
+  font: normal normal 900 12px/16px Roboto Slab; ;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  margin-left: auto;
+    margin-right: auto;
+  
+  margin-top:2rem;
+  color: var(--unnamed-color-033244);
+  transition: background 0.3 ;
+  }
+  #join h1 {
+    font:  900 "Roboto Slab" var(--two-color-033244); 
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 0px;
+    opacity: 1;
+    margin-top: -1.5rem;
+  }
+  #join .text{
+    font:bold  "Roboto Slab" var(--unnamed-color-005271);
+    font-size: 0.75rem;
+    text-align: center;
+    letter-spacing: 0px;
+
+  }
+  #join .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+#join{
+  background: transparent url('../assets mobile/bg time.png') 0% 0% no-repeat padding-box;
+opacity: 1;
+width: 286px;
+height: 274px;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+    
+
+
+/* teste */
+.cards.grid {
+  gap: 1.5rem;}
+ .card {
+  background: white;
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+.card i {
+  display: block;
+    margin-bottom: 1.5rem;
+    margin-top:0;
+    font-size: 5rem;
+    color: var(--text-color-283137);
+}
+
+/* --------------------------------*/
+/* sobre */
+#sobre .container {
+  margin-left: 0;
+  margin-right: auto;
+}
+#sobre{
+background: transparent url('../assets mobile/BG\ CONHEÇA.png') 0% 0% no-repeat padding-box;
+opacity: 1;
+margin-left: auto;
+margin-right: auto;
+width: 245px;
+height: 251px;
+}
+#sobre h1 {
+  font:  900 "Roboto Slab"; 
+  font-size: 1rem;
+  color:white;
+  text-align: center;
+  letter-spacing: 0px;
+  opacity: 1;
+  margin-top: -1.5rem;
+}
+#sobre .text p{
+  font:bold  "Roboto Slab" ;
+  color:var(--unnamed-color-71d8ff);
+  font-size: 0.75rem;
+  text-align: center;
+  letter-spacing: 0px;
+
+}
+#sobre .button{ 
+  width: 165px;
+  height: 32px;
+  background: var(--unnamed-color-0089bc) 0% 0% no-repeat padding-box;
+  opacity: 1;
+  font: normal normal 900 12px/16px "Roboto Slab"; 
+  border-radius: 0.25rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:2rem;
+  color: var(--unnamed-color-033244);
+  transition: background 0.3 ;
+  }
+
+  /*--------------------------------------------*/
+  /* selos */
+  #selos .text {
+    background: transparent url('../assets mobile/selo-wgc.png') 0% 0% no-repeat padding-box;
+   
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+  }
